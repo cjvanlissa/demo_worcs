@@ -1,0 +1,14 @@
+worcs_version: 0.1.14
+creator: vanlissa
+entry_point: manuscript/manuscript.Rmd
+recipe:
+  recipe: rmarkdown::render('manuscript/manuscript.Rmd')
+  terminal: no
+data:
+  lgd.csv:
+    save_expression: write.csv(x = data, file = filename, row.names = FALSE)
+    load_expression: read.csv(file = filename, stringsAsFactors = TRUE)
+    codebook: codebook_lgd.rmd
+    labels: value_labels_lgd.yml
+checksums:
+  lgd.csv: 798370cae44876be6d257790abb0a535

@@ -1,0 +1,55 @@
+---
+title: "MOCK: The determinants of the loss given default of residential mortgage loans in Portugal"
+output: github_document
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+bibliography: references.bib
+knit: worcs::cite_all
+---
+
+This toy example is based on the working paper entitled "The determinants of the loss given default of residential mortgage loans in Portugal", by Ângelo Ramos and Márcio Mateus of the Banco de Portugal, 2023.
+
+<https://www.bportugal.pt/en/paper/determinants-loss-given-default-residential-mortgage-loans-portugal>
+
+```{r setup, include=FALSE}
+library("worcs")
+# We recommend that you prepare your raw data for analysis in 'prepare_data.R',
+# and end that file with either open_data(yourdata), or closed_data(yourdata).
+# Then, uncomment the line below to load the original or synthetic data
+# (whichever is available), to allow anyone to reproduce your code:
+load_data()
+knitr::opts_chunk$set(echo = TRUE)
+```
+This manuscript uses the Workflow for Open Reproducible Code in Science [@vanlissaWORCSWorkflowOpen2021] to ensure reproducibility and transparency. All code <!--and data--> are available at <git@[...].git>.
+
+This is an example of a non-essential citation [@@vanlissaWORCSWorkflowOpen2021]. If you change the rendering function to `worcs::cite_essential`, it will be removed.
+
+<!--The function below inserts a notification if the manuscript is knit using synthetic data. Make sure to insert it after load_data().-->
+`r notify_synthetic()`
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r analysis}
+contrasts(lgd$oLTV) <- contr.treatment(10)
+res <- lm(LGD ~ ., lgd)
+tab_coef <- summary(res)$coefficients
+colnames(tab_coef) <- c("Est", "SE", "t", "p")
+tab_coef[,] <- round(tab_coef, 2)
+tab_coef <- data.frame(Parameter = rownames(tab_coef), tab_coef)
+write.csv(tab_coef, "tab_coef.csv", row.names = FALSE)
+```
+
+## Results
+
+Below is a table of results:
+
+```{r}
+tab_coef <- read.csv("tab_coef.csv")
+knitr::kable(tab_coef, digits = 2)
+```
+
