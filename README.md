@@ -1,3 +1,7 @@
+<!-- badges: start -->
+  [![worcs_reproduce](https://github.com/cjvanlissa/demo_worcs/actions/workflows/worcs_reproduce.yaml/badge.svg)](https://github.com/cjvanlissa/demo_worcs/actions/workflows/worcs_reproduce.yaml)
+  <!-- badges: end -->
+  
 # Readme <a href='https://osf.io/zcvbs/'><img src='worcs_icon.png' align="right" height="139" /></a>
 
 <!-- Please add a brief introduction to explain what the project is about    -->

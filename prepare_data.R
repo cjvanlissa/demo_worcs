@@ -4,12 +4,6 @@
 # to store the data.
 
 library(worcs)
-n = 100
-set.seed(1)
-predictors <- data.frame(hpa = rnorm(n, mean =  -1.81, sd = 5.49),
-                         oLTV = ordered(sample.int(10, n, replace = TRUE)))
-contrasts(predictors$oLTV) <- contr.treatment(10)
-X <- model.matrix(~., predictors)[, -1]
-LGD <- X %*% c(-.337, -.008, -.007, .031, .091, .119, .144, .196, .316, .626) + rnorm(n)
-lgd <- data.frame(predictors, LGD = LGD)
+lgd <- read.csv("lgd.csv")
+lgd$oLTV <- ordered(lgd$oLTV, levels = c('oLTV≤50%', '50%<oLTV≤70%', '70%<oLTV≤80%', '80%<oLTV≤90%', '90%<oLTV<100%', 'oLTV=100%', '100%<oLTV≤110%', '110%<oLTV≤120%', '120%<oLTV≤150%', 'oLTV>150%'))
 open_data(lgd)

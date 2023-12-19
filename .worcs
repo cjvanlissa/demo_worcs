@@ -11,4 +11,6 @@ data:
     codebook: codebook_lgd.rmd
     labels: value_labels_lgd.yml
 checksums:
-  lgd.csv: 798370cae44876be6d257790abb0a535
+  lgd.csv: d26e2305ac53a43019b4481d8f6113bc
+  manuscript/tab_coef.csv: cf027809e96e98911f91bb9f323f26f6
+endpoints: manuscript/tab_coef.csv

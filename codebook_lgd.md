@@ -1,4 +1,4 @@
-Codebook created on 2023-12-19 at 2023-12-19 13:18:43.567837
+Codebook created on 2023-12-19 at 2023-12-19 13:23:08.160165
 ================
 
 A codebook contains documentation and metadata describing the contents,
@@ -6,15 +6,15 @@ structure, and layout of a data file.
 
 ## Dataset description
 
-The data contains 100 cases and 3 variables.
+The data contains 12777 cases and 3 variables.
 
 ## Codebook
 
-| name | type            |   n | missing | unique |  mean | median |  mode | mode_value |   sd |    v |    min |   max | range |  skew | skew_2se |  kurt | kurt_2se |
-|:-----|:----------------|----:|--------:|-------:|------:|-------:|------:|-----------:|-----:|-----:|-------:|------:|------:|------:|---------:|------:|---------:|
-| hpa  | numeric         | 100 |       0 |    100 | -1.21 |  -1.18 | -1.18 |            | 4.93 |      | -13.97 | 11.37 | 25.34 | -0.07 |    -0.15 | -0.05 |    -0.05 |
-| oLTV | ordered, factor | 100 |       0 |     11 |       |        | 15.00 |          5 |      | 0.89 |        |       |       |       |          |       |          |
-| LGD  | numeric         | 100 |       0 |    100 |  0.54 |   0.61 |  0.61 |            | 1.94 |      |  -3.82 |  6.16 |  9.98 |  0.19 |     0.40 | -0.33 |    -0.35 |
+| name | type            |     n | missing | unique |  mean | median |    mode | mode_value    |   sd |   v |    min |   max | range |  skew | skew_2se |  kurt | kurt_2se |
+|:-----|:----------------|------:|--------:|-------:|------:|-------:|--------:|:--------------|-----:|----:|-------:|------:|------:|------:|---------:|------:|---------:|
+| hpa  | numeric         | 12777 |       0 |  12777 | -1.86 |  -1.91 |   -1.91 |               | 5.52 |     | -25.43 | 19.11 | 44.54 | -0.01 |    -0.18 | -0.03 |    -0.35 |
+| oLTV | ordered, factor | 12777 |       0 |     11 |       |        | 1320.00 | 80%\<oLTV≤90% |      | 0.9 |        |       |       |       |          |       |          |
+| LGD  | numeric         | 12777 |       0 |  12777 |  0.78 |   0.79 |    0.79 |               | 2.12 |     |  -6.69 | 10.03 | 16.73 |  0.03 |     0.77 | -0.02 |    -0.24 |
 
 ### Legend
 
